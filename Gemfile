@@ -18,6 +18,11 @@ group :assets do
 end
 
 
+group :development, :test do
+  gem 'fabrication-rails'
+end
+
+
 group :test do
   gem 'capybara'
   gem 'cucumber-rails'
