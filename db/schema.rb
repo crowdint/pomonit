@@ -11,6 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20121014032750) do
+
+  create_table "stations", :force => true do |t|
+    t.string   "name"
+    t.string   "host"
+    t.string   "state",      :default => "enabled"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  add_index "stations", ["host"], :name => "index_stations_on_host", :unique => true
+  add_index "stations", ["state"], :name => "index_stations_on_state"
 
 end
